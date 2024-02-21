@@ -15,8 +15,9 @@
   position: relative;
   z-index: 10;
   clear: both;
-
+  // margin-top: -2rem;
   &.sticky {
+    // margin-top: 0rem;
     position: fixed;
     top: 0;
     left: 0;

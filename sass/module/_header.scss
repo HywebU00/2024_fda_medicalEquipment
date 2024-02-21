@@ -128,7 +128,7 @@
     // min-height: rem(115);
     @include screen('mobile') {
       padding: 0;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     }
   }
 
@@ -191,6 +191,7 @@
     align-items: center;
     margin-top: rem(35);
     height: 115px;
+    // margin-bottom: 2rem;
     @include screen('mobile') {
       display: none;
     }
@@ -272,6 +273,32 @@
     @include screen('tablet') {
       margin-top: 0;
       height: auto;
+    }
+  }
+}
+//沒有選單的時候
+.nomenu {
+  .header {
+    position: sticky;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    &::after {
+      display: none;
+    }
+  }
+  .innerPage {
+    &::before {
+      top: -2rem;
+    }
+  }
+  .container {
+    margin-top: 2rem;
+  }
+  @include screen('mobile') {
+    .header {
+      position: fixed;
+    }
+    .container {
+      margin-top: 0rem;
     }
   }
 }
