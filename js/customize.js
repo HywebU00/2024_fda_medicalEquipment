@@ -1,4 +1,5 @@
 // -----  基本功能開關   ---------------------------------------------------
+new WOW().init();
 window.addEventListener('load', () => {
   topNav(); // 手機版顯示nav選單
   navSticky(); // 捲動時固定主選單
@@ -114,6 +115,9 @@ window.addEventListener('load', () => {
     },
     breakpoints: {
       100: {
+        slidesPerView: 1,
+      },
+      575: {
         slidesPerView: 2,
       },
       767: {

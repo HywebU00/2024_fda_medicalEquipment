@@ -545,13 +545,17 @@ function mainMenuSetup() {
   body.prepend(sidebar);
 
   const menuOverlay = document.querySelector('.menuOverlay');
-  const mainMenu = document.querySelector('.mainMenu');
-  if (mainMenu) {
-    const hasChildUl = mainMenu.querySelectorAll('li ul');
-    hasChildUl.forEach((i) => {
-      i.parentNode.classList.add('hasChild');
-    });
+  let mainMenu = document.querySelector('.mainMenu');
+
+  if (!mainMenu) {
+    mainMenu = document.createElement('div');
+    mainMenu.setAttribute('class', 'menu mainMenu');
   }
+
+  const hasChildUl = mainMenu.querySelectorAll('li ul');
+  hasChildUl.forEach((i) => {
+    i.parentNode.classList.add('hasChild');
+  });
 
   // menu初始化 新增側欄選單按鈕
   const sidebarCtrlBtn = document.createElement('button');
@@ -563,12 +567,11 @@ function mainMenuSetup() {
 
   // menu初始化 複製手機版側欄選單
   const mobileArea = document.querySelector('.mobileArea');
-  if (mainMenu) {
-    const cloneMenu = mainMenu.cloneNode(true);
-    cloneMenu.classList.add('sideMainMenu');
-    cloneMenu.classList.remove('mainMenu', 'megaMenu', 'menu');
-    mobileArea.append(cloneMenu);
-  }
+
+  const cloneMenu = mainMenu.cloneNode(true);
+  cloneMenu.classList.add('sideMainMenu');
+  cloneMenu.classList.remove('mainMenu', 'megaMenu', 'menu');
+  mobileArea.append(cloneMenu);
 
   ////////////////////////////////////////////////////////////////////////////////
   let windowHeight = window.innerHeight;
@@ -744,8 +747,9 @@ function mainMenuSetup() {
   }
 
   // 不focus時
-  if (mainMenu) {
-    const lastA = mainMenu.querySelectorAll('a').length - 1;
+
+  const lastA = mainMenu.querySelectorAll('a').length - 1;
+  if (lastA >= 0) {
     mainMenu.querySelectorAll('a')[lastA].addEventListener('focusout', () => {
       mainMenu.querySelectorAll('li').forEach((i) => {
         i.classList.remove('active');
@@ -761,6 +765,7 @@ function mainMenuSetup() {
     const sidebarClose = document.querySelector('.sidebarClose');
     const asideMenu = document.querySelector('.sideMainMenu');
     const asideMenuLi = asideMenu.querySelectorAll('li');
+
     const asideMenuLiHasChild = asideMenu.querySelectorAll('li.hasChild > a');
 
     asideMenuLiHasChild.forEach((i) => {
@@ -1470,7 +1475,7 @@ function fontSize() {
 }
 
 // window.addEventListener('load', function (e) {
-//   console.log('a');
+//
 // });
 // -----------------------------------------------------------------------
 // -----  分享按鈕 share dropdwon   ---------------------------------------

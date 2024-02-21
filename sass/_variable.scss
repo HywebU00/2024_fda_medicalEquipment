@@ -6,8 +6,8 @@
 $colorPrimary: #174ca1; //#00a4f9; //主色
 $colorSecondary: #00aebe; // #781f79; //輔色
 $colorLight: #ff7400; //#fec003; //點綴
-$colorLink: #00a4f9; //連結
-$colorImportant: #eb0202; //重要
+$colorLink: #00aebe; //#00a4f9; //連結
+$colorImportant: #d94800; //#eb0202; //重要
 $colorSubText: #474747;
 // 但注意真實顏色與語意的關聯必須易於辨識
 $colorBlue: #0066cc;
@@ -22,7 +22,7 @@ $colorHr: #666; //hr顏色
 $colorWord: #222; //一般字的顏色
 $btnWordColor: #222; //按鈕字的顏色
 // 連結顏色
-$aColor: #00a4f9;
+$aColor: #00aebe; //#00a4f9;
 $aHover: mix($aColor, #000, 90%);
 $aFocus: mix($aColor, #fff, 90%);
 // 表單focus顏色
@@ -44,7 +44,7 @@ $objFit: cover;
 //------------------------------------------------------字型--------//
 
 // 字型設定
-$fontFamily: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, Arial, sans-serif;
+$fontFamily: 'Noto Sans TC', Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, Arial, sans-serif;
 
 $fontSize: 1em;
 
@@ -56,7 +56,7 @@ $remFontSize: 16;
 // 格線系統
 $gridColumns: 12 !default; //格線欄位數
 $gridGutterWidth: 30px !default; //左右padding
-$containerMax: 1300px !default;
+$containerMax: 1280px !default;
 // $containerMax: 1200px !default; //container最大寬
 
 //mediaquery

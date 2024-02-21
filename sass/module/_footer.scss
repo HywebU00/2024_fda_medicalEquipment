@@ -18,11 +18,18 @@ footer {
     display: flex;
     @include screen('tablet') {
       flex-wrap: wrap;
+      > div {
+        display: block;
+        a {
+          margin-bottom: 0.5em;
+        }
+      }
     }
   }
   a {
     text-decoration: none;
     color: $colorPrimary;
+    margin-right: 0.5rem;
     &:hover,
     &:focus-visible {
       color: darken($colorPrimary, 10);

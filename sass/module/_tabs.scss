@@ -83,15 +83,20 @@
 
   .modeBBtn,
   .tabBtn {
-    flex: 1 1 auto;
+    // flex: 1 1 auto;
+    flex: 0 1 calc(100% / 7);
     font-size: 1em;
     height: 2.8em;
     text-align: center;
     border: none;
-    margin: 1px;
-    border-radius: 0;
+    margin: 2px;
+    &:first-child {
+      margin-left: 0;
+    }
+    border-radius: 8px 8px 0 0px;
     box-shadow: none;
-    background: #ddd;
+    background: $colorSecondary; //#ddd;
+    color: #fff;
     cursor: pointer;
 
     &:focus-visible {
@@ -101,19 +106,25 @@
 
     &.active {
       cursor: default;
-      background: #00a4f9;
+      background: $colorPrimary;
       color: #fff;
     }
+    @include screen('tablet') {
+      flex: 0 1 calc(100% / 4);
+      border-radius: 8px;
+    }
   }
-
 
   .tabContent {
     display: none;
     position: relative;
+    border-top: 3px solid $colorPrimary;
     padding: 15px;
-    box-shadow: #bbb 0 0 0 1px inset;
-
-
+    // box-shadow: #bbb 0 0 0 1px inset;
+    @include screen('mobile') {
+      border-top: none;
+      padding: 5px 0;
+    }
     &.active {
       display: block;
     }

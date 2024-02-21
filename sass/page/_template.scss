@@ -42,7 +42,8 @@ body {
   position: relative;
   margin: 0 auto 5em;
   @include screen('mobile') {
-    padding-top: 150px;
+    padding-top: 80px;
+    // padding-top: 150px;
   }
   // 可先設定一個中央區塊最大寬，限制accessKey對齊
   h2 {
@@ -52,10 +53,35 @@ body {
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerPage ClassName
 .innerPage {
+  &::before {
+    content: '';
+    top: 0;
+    height: rem(65);
+    width: 100%;
+    position: absolute;
+
+    background: linear-gradient(90deg, rgb(0, 174, 190) 0%, rgb(23, 78, 161) 100%);
+  }
+  &::after {
+    content: '';
+    position: fixed;
+    background: no-repeat url(../images/customize/content_bg.png);
+    background-position: bottom;
+    background-size: contain;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
   & > .container {
     padding-top: 1em;
     @include gutter(); //gutter 代表左右要留白
     display: flex;
+    border-radius: 15px;
+    padding: rem(35) rem(55);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    position: relative;
+    background: #fff;
   }
   .centerBlock {
     flex: none;

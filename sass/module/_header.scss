@@ -5,7 +5,8 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 0px;
+  // top: 0px;
+  top: 18px;
   display: none;
   font-size: 0em;
   padding: 15px;
@@ -95,12 +96,13 @@
   left: 0;
   z-index: 99;
   transition: 0.3s ease-out;
-  height: rem(150);
-  border: 1px solid #ccc;
+  // min-height: rem(150);
+  border-top: 1px solid transparent;
   background: #fff;
   @include screen('mobile') {
     position: fixed;
     width: 100%;
+    height: unset;
   }
 
   &:before {
@@ -110,14 +112,12 @@
     height: 10px;
     top: 0;
     left: 0;
-
     background: linear-gradient(90deg, rgba(23, 78, 161, 1) 0%, rgba(0, 174, 190, 1) 100%);
-
     pointer-events: none;
     // z-index: -1;
 
     @include screen('mobile') {
-      height: 60px;
+      // height: 60px;
     }
   }
 
@@ -125,9 +125,10 @@
     max-width: $containerMax;
     overflow: visible;
     position: relative;
-
+    // min-height: rem(115);
     @include screen('mobile') {
       padding: 0;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
   }
 
@@ -169,6 +170,17 @@
       }
     }
   }
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    top: 151px;
+    height: rem(60);
+    background: linear-gradient(90deg, rgb(0, 174, 190) 0%, rgb(23, 78, 161) 100%);
+    @include screen('mobile') {
+      display: none;
+    }
+  }
 
   // 導覽列
   .navigation {
@@ -178,6 +190,7 @@
     z-index: 55;
     align-items: center;
     margin-top: rem(35);
+    height: 115px;
     @include screen('mobile') {
       display: none;
     }
@@ -197,7 +210,7 @@
 
       li {
         flex: 0 0 auto;
-
+        margin: 0 0.5rem;
         a {
           display: block;
           padding: 0.5em;
@@ -212,9 +225,13 @@
     .submenuBox {
       display: flex;
       align-items: center;
-      padding: 15px;
+      // padding: 0 15px;
       // background: linear-gradient(135deg, #005d9d 0%, #98d1a7 100%);
       position: relative;
+      margin-right: rem(65);
+      @media screen and (max-width: 1200px) {
+        margin-right: 0rem;
+      }
 
       & > div {
         + div::after {
@@ -238,7 +255,12 @@
     position: absolute;
     // top: 35px;
     z-index: 50;
-
+    @include screen('tablet') {
+      display: contents;
+      a {
+        padding-top: 1rem;
+      }
+    }
     @include screen('mobile') {
       position: relative;
       top: auto;
@@ -246,6 +268,10 @@
   }
 
   .navigation {
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
+    @include screen('tablet') {
+      margin-top: 0;
+      height: auto;
+    }
   }
 }

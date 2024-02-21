@@ -2,7 +2,7 @@
 
 - HyUI 版本號: v.4.2.5
 - 專案名稱: HyUI kit
-- UI 設計師:琬樺
+- UI 設計師:Veela
 - 切版設計師:Margo
   <br/>
   <br/>

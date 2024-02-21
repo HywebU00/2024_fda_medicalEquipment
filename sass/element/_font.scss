@@ -129,11 +129,12 @@ kbd {
     width: 50px;
     aspect-ratio: 1/1;
     position: relative;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     &::before {
       width: 100%;
       aspect-ratio: 1/1;
       content: 'A';
+      font-weight: bold;
       text-indent: 0;
       // color: #fff;
       position: absolute;
@@ -142,6 +143,15 @@ kbd {
       line-height: 50px;
       z-index: 2;
       display: block;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 6px;
+      top: 22px;
+      right: 0;
+      background: url(../images/customize/font_btn.png) no-repeat;
     }
   }
   ul {
