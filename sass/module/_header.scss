@@ -28,7 +28,7 @@
   display: none;
   left: 0px;
   @include mobileCtrlBtn;
-
+  top: 10px;
   &::before {
     position: absolute;
     content: '';
@@ -167,6 +167,7 @@
         max-height: 54px;
         margin: 0px auto;
         transform: scale(0.8);
+        padding: 0 0.5rem;
       }
     }
   }
