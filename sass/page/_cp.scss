@@ -363,3 +363,32 @@ h2.title {
     margin-right: 2rem;
   }
 }
+.itemSearch {
+  background: mix(#174ca1, #fff, 10%);
+  border-radius: 8px;
+  padding: 0.2em 0.25em;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  label {
+    font-weight: 600;
+  }
+  @include screen('mobile') {
+    .flexForm {
+      display: block;
+      width: 100%;
+      .formGrp {
+        select,
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.infoSection {
+  background: mix(#174ca1, #fff, 10%);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}

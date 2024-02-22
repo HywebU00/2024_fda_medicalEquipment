@@ -4,7 +4,8 @@
       a {
         @include aSetting($colorWord);
       }
-      &.date {
+      &.date,
+      &.update {
         text-align: center;
         color: #666;
         @include screen('mobile') {
