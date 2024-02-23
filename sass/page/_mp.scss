@@ -497,6 +497,11 @@ section {
                 max-width: 80%;
               }
             }
+            @include screen('mobile') {
+              > div {
+                max-width: 100%;
+              }
+            }
           }
           &:nth-child(2) {
             min-height: rem(600);
@@ -626,6 +631,7 @@ section {
             height: rem(200);
             border-radius: 50%;
             box-shadow: rgba(0, 0, 0, 0.3) 0px 18px 50px -10px;
+            transition: all 0.5s;
           }
           animation: animecircle 5s infinite ease-in-out;
           transition: all 0.3s ease;
@@ -638,6 +644,13 @@ section {
           text-align: center;
           align-items: center;
           justify-content: center;
+          &:hover {
+            box-shadow: inset -20px -10px 20px rgba(0, 0, 0, 0.15);
+            &::after {
+              transition: all 0.5s;
+              box-shadow: rgb(0, 174, 190, 0.15) 0px 0px 0px 10px, rgba(0, 174, 190, 0.1) 0px 0px 0px 20px, rgba(0, 174, 190, 0.05) 0px 0px 0px 30px, rgba(0, 174, 190, 0.03) 0px 0px 0px 35px, rgba(0, 174, 190, 0.015) 0px 0px 0px 40px;
+            }
+          }
         }
         &:nth-child(1) {
           animation-delay: 3s;
@@ -1027,8 +1040,22 @@ section {
 .largeSize .mp .banner {
   .bannerTitle .flexSet .col:nth-child(1) > div {
     max-width: 36.5rem;
+    @media screen and (max-width: 1280px) {
+      max-width: 32.5rem;
+      h2 {
+        font-size: 2.8em;
+      }
+    }
+    @media screen and (max-width: 1100px) {
+      h2 {
+        font-size: 2.3em;
+      }
+    }
     @include screen('tablet') {
       max-width: 80%;
+      h2 {
+        font-size: 2.8em;
+      }
     }
   }
 }
