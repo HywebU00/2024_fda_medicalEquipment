@@ -176,7 +176,7 @@
     content: '';
     width: 100%;
     top: 151px;
-    height: rem(60);
+    height: rem(121);
     background: linear-gradient(90deg, rgb(0, 174, 190) 0%, rgb(23, 78, 161) 100%);
     @include screen('mobile') {
       display: none;

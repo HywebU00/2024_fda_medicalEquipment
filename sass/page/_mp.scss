@@ -494,7 +494,7 @@ section {
               width: 100%;
               max-width: unset;
               > div {
-                max-width: unset;
+                max-width: 80%;
               }
             }
           }
@@ -520,7 +520,7 @@ section {
       font-size: 3.125em; //rem(50);
       font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
       font-weight: 700;
-
+      // text-wrap: nowrap;
       .title {
         line-height: rem(50);
       }
@@ -1022,4 +1022,21 @@ section {
   width: rem(150);
   z-index: 99;
   bottom: rem(60);
+}
+
+.largeSize .mp .banner {
+  .bannerTitle .flexSet .col:nth-child(1) > div {
+    max-width: 36.5rem;
+    @include screen('tablet') {
+      max-width: 80%;
+    }
+  }
+}
+.smallSize .mp .banner {
+  .bannerTitle .flexSet .col:nth-child(1) > div {
+    max-width: 30.5rem;
+    @include screen('tablet') {
+      max-width: 80%;
+    }
+  }
 }

@@ -7,16 +7,18 @@
     flex-wrap: wrap;
 
     li {
-      margin: 0px 3px 3px 0px;
+      margin: 0px 6px 6px 0px;
       display: block;
     }
   }
   a {
-    border: 1px solid #aaa;
+    border: 1px solid $colorSecondary;
     padding: 0.25em 0.75em;
     display: block;
-    color: #333;
+    color: #fff;
     font-size: 0.875rem;
+    background: $colorSecondary;
+    border-radius: 8px;
     box-sizing: border-box;
     &:before {
       content: '#';
