@@ -578,6 +578,11 @@ section {
       width: 100%;
       top: 0;
     }
+    @media screen and (min-width: 1960px) {
+      &::after {
+        background-size: cover;
+      }
+    }
     @include screen('tablet') {
       &::after {
         background-position: center 75vh;
@@ -669,6 +674,12 @@ section {
           }
           right: rem(0);
           top: rem(123);
+          @media screen and (max-width: 1024px) {
+            top: rem(80);
+          }
+          @include screen('tablet') {
+            top: rem(123);
+          }
         }
         &:nth-child(3) {
           animation-delay: 2s;
@@ -1044,6 +1055,16 @@ section {
   width: rem(150);
   z-index: 99;
   bottom: rem(60);
+  @media screen and (max-width: 1024px) {
+    bottom: rem(50);
+    width: rem(110);
+    right: 5px;
+  }
+  @include screen('tablet') {
+    width: rem(110);
+    bottom: rem(48);
+    right: 5px;
+  }
 }
 
 .largeSize .mp .banner {
