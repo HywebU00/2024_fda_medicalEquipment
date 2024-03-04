@@ -600,14 +600,10 @@ section {
       list-style: none;
       padding-left: 0;
       position: absolute;
-
       width: 100%;
       height: 100%;
       z-index: 1;
-
-      @include screen('tablet') {
-        max-width: 60%;
-      }
+      margin-top: -20px;
 
       li {
         display: inline-block;
@@ -622,18 +618,17 @@ section {
           color: #fff;
           margin-top: 16px;
         }
-
         a {
           display: block;
-          width: 200px;
-          height: 200px;
+          width: 198px;
+          height: 198px;
           padding: 1rem;
           border-radius: 50%;
           &::after {
             content: '';
             position: absolute;
-            width: rem(200);
-            height: rem(200);
+            width: rem(198);
+            height: rem(198);
             border-radius: 50%;
             box-shadow: rgba(0, 0, 0, 0.3) 0px 18px 50px -10px;
             transition: all 0.5s;
@@ -664,7 +659,7 @@ section {
             animation-delay: 5s;
           }
           top: rem(50);
-          right: rem(347);
+          right: rem(367);
         }
         &:nth-child(2) {
           animation-delay: 1s;
@@ -674,8 +669,13 @@ section {
           }
           right: rem(0);
           top: rem(123);
+          @media screen and (max-width: 1440px) {
+            top: rem(80);
+            right: rem(50);
+          }
           @media screen and (max-width: 1024px) {
             top: rem(80);
+            right: rem(-16);
           }
           @include screen('tablet') {
             top: rem(123);
@@ -686,15 +686,28 @@ section {
           a {
             background: linear-gradient(180deg, #78dfe9 0%, #04b0c0 100%);
             animation-delay: 1s;
-            width: rem(240);
-            height: rem(240);
+            width: rem(238);
+            height: rem(238);
             &::after {
-              width: rem(240);
-              height: rem(240);
+              width: rem(238);
+              height: rem(238);
             }
           }
-          top: rem(300);
-          right: rem(236);
+          top: rem(280);
+          right: rem(230);
+          @media screen and (max-width: 1440px) {
+            top: rem(250);
+            right: rem(200);
+          }
+          @media screen and (max-width: 1200px) {
+            top: rem(230);
+          }
+          @media screen and (max-width: 1024px) {
+            right: rem(160);
+          }
+          @include screen('tablet') {
+            top: rem(260);
+          }
         }
         @keyframes animecircle {
           0% {
@@ -719,15 +732,34 @@ section {
           }
         }
       }
+      @media screen and (max-width: 1440px) {
+        li {
+          a {
+            width: rem(186);
+            height: rem(186);
+            &::after {
+              width: rem(186);
+              height: rem(186);
+            }
+          }
+        }
+      }
       @media screen and (max-width: 1200px) {
+        margin-top: -30px;
         li {
           &:first-child {
             right: unset;
           }
         }
       }
+
+      @include screen('tablet') {
+        margin-top: 0px;
+        max-width: 60%;
+      }
       @include screen('mobile') {
         max-width: 100%;
+        margin-top: 0px;
         li {
           a {
             width: 180px;
@@ -1052,7 +1084,7 @@ section {
 .lineBtn {
   position: fixed;
   right: 30px;
-  width: rem(150);
+  width: rem(120);
   z-index: 99;
   bottom: rem(60);
   @media screen and (max-width: 1024px) {
