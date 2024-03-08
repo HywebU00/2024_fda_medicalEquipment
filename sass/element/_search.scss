@@ -67,13 +67,15 @@
   }
 
   @include screen('mobile') {
-    width: 100% !important;
+    // width: 100% !important;
   }
 
   .content {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
+    position: relative;
+    align-items: center;
   }
 
   &.active {
@@ -110,8 +112,7 @@
 
   .formGrp {
     flex: 0 0 auto;
-    margin: 0 0 0.5em;
-
+    display: flex;
     input {
       margin: 0 0.5em 0 0;
       padding: 0.25em 0.5em;
@@ -133,7 +134,7 @@
     .btnSearch {
       min-width: auto;
       padding: 0.2em 0.8em;
-      margin: 0;
+      margin: 0 0.2rem;
 
       &:hover,
       &:focus-visible {
@@ -153,10 +154,16 @@
       min-width: auto;
       padding: 0.2em 0.8em;
       margin: 0;
-
       &:hover,
       &:focus-visible {
         box-shadow: none;
+      }
+    }
+    .btn {
+      background: #fff;
+      border: none;
+      img {
+        width: 20px !important;
       }
     }
   }
@@ -172,11 +179,17 @@
       display: flex;
       justify-content: flex-end;
       list-style-type: none;
-
+      margin-top: 0.25rem;
       li {
         margin: 0;
         padding: 0 0.5em;
         flex: 0 0 auto;
+        a {
+          color: #fff;
+          &:hover {
+            color: mix($colorSecondary, #fff, 30%);
+          }
+        }
       }
 
       a {
@@ -184,24 +197,54 @@
       }
     }
   }
+  .searchBtn {
+    font-size: 0px;
+    border: 0px;
+    background: url('../images/icon/icon_search_dark.svg') no-repeat center;
+    width: 19px;
+    height: 18px;
+    margin-left: 0.5rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    background-size: contain;
+  }
+  .inputBox {
+    background: #444444de;
+    position: absolute;
+    padding: 0.75rem;
+    display: none;
+    top: 124px;
+    right: 10px;
+    border-radius: 0.25rem;
+    z-index: 99;
+  }
 
   @include screen('mobile') {
-    display: none;
-    width: 100% !important;
-    left: 0;
-    right: 0;
-    margin: 0;
-
-    .content {
-      padding: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      background: #444;
+    position: absolute;
+    top: 16px;
+    .inputBox {
+      top: 72px;
+      width: 100%;
+      position: fixed;
+      right: 0;
+      border-radius: 0;
     }
+    // display: none;
+    // width: 100% !important;
+    // left: 0;
+    // right: 0;
+    // margin: 0;
+
+    // .content {
+    //   padding: 10px;
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   background: #444;
+    // }
 
     .formGrp {
-      display: flex;
-      flex-grow: 1;
+      // display: flex;
+      // flex-grow: 1;
 
       input {
         flex-grow: 1;
@@ -210,13 +253,13 @@
       }
     }
 
-    .keywordHot {
-      ul {
-        a {
-          color: #fff;
-        }
-      }
-    }
+    // .keywordHot {
+    //   ul {
+    //     a {
+    //       color: #fff;
+    //     }
+    //   }
+    // }
   }
 }
 

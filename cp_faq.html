@@ -21,37 +21,60 @@
   <a class="goCenter" href="#center" tabindex="1">按Enter到主內容區</a>
   <!-- wrapper Start -->
   <div class="wrapper">
-    <!-- header Start -->
     <header class="header typeB">
       <div class="container">
         <!-- <a class="accessKey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a> -->
         <h1>
           <a href="index.html"><img src="images/logo.png" alt="網站標題" /></a>
         </h1>
-        <!-- navigation Start -->
-        <nav class="navigation" role="navigation" aria-label="Site">
-          <!-- 新增div navList -->
-          <div class="navList">
-            <ul>
-              <li><a href="#">回首頁</a></li>
-              <li><a href="#">網站導覽</a></li>
-              <li><a href="#">常見問答</a></li>
-            </ul>
-          </div>
-          <div class="submenuBox">
-            <!-- fontSize -->
-            <div class="fontSize typeB">
-              <button class="fontSizeLabel" title="字型大小">字型大小：</button>
+        <div class="menuList">
+          <!-- navigation Start -->
+          <nav class="navigation" role="navigation" aria-label="Site">
+            <!-- 新增div navList -->
+            <div class="navList">
               <ul>
-                <li><button class="small">小</button></li>
-                <li><button class="medium">中</button></li>
-                <li><button class="large">大</button></li>
+                <li><a href="#">網站導覽</a></li>
+                <li><a href="#">網站導覽</a></li>
+                <li><a href="#">CDE官網</a></li>
               </ul>
             </div>
-
+            <div class="submenuBox">
+              <!-- fontSize -->
+              <div class="fontSize typeB">
+                <button class="fontSizeLabel" title="字型大小">字型大小：</button>
+                <ul>
+                  <li><button class="small">小</button></li>
+                  <li><button class="medium">中</button></li>
+                  <li><button class="large">大</button></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- navigation End -->
+          <!-- Search Start -->
+          <div class="webSearch" role="search">
+            <button class="searchBtn">
+              查詢
+            </button>
+            <div class="inputBox">
+              <div class="formGrp">
+                <label for="mustSameAsId">搜尋</label>
+                <input name="username" id="mustSameAsId" type="text" placeholder="請輸入文字" accesskey="S" title="請輸入文字" aria-label="搜尋網站內容" />
+                <button type="button" class="btn btnSearch">查詢</button>
+                <button type="button" class="btn">進階搜尋</button>
+              </div>
+              <div class="keywordHot">
+                <ul>
+                  <li><a href="#">熱門熱門</a></li>
+                  <li><a href="#">查詢</a></li>
+                  <li><a href="#">字詞三</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- Search End -->
           </div>
-        </nav>
-        <!-- navigation End -->
+        </div>
+
         <!-- noscript -->
         <noscript>
           您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結
@@ -61,24 +84,20 @@
         <nav class="menu mainMenu" role="navigation" aria-label="About page">
           <ul>
             <li>
-              <a href="#">查詢法規</a>
+              <a href="#">第一層選單</a>
             </li>
-            <li><a href="http://www.google.com">常見問題</a></li>
+            <li><a href="http://www.google.com">第一層有連結</a></li>
             <li>
-              <a href="http://www.google.com">線上諮詢</a>
-            </li>
-            <li>
-              <a href="http://www.google.com">與我們聯繫</a>
+              <a href="http://www.google.com">第一層有連結</a>
             </li>
             <li>
-              <a href="http://www.google.com">業務介紹</a>
+              <a href="http://www.google.com">第一層有連結</a>
             </li>
           </ul>
         </nav>
         <!-- menu End -->
       </div>
     </header>
-    <!-- header End -->
 
     <!-- main Start -->
     <main id="center" class="main innerPage">

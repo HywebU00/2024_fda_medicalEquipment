@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
   scrollTables('.tableWrapper'); // table捲動功能
 
   // webSearch();
-
+  // webSearchBtnFunction();
   // tab功能
   tabFunction({
     target: '.tabSet',

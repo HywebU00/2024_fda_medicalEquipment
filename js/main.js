@@ -1496,6 +1496,39 @@ function shareBtnFunction() {
   xSlider('.share > button', '.share ul');
 }
 shareBtnFunction();
+// -----------------------------------------------------------------------
+// -----  分享按鈕 webSearchBtn dropdwon   ---------------------------------------
+// -----------------------------------------------------------------------
+function clickOverlay() {
+  let lay = document.querySelector('.menuOverlay');
+  let style = window.getComputedStyle(lay);
+
+  if (style.display == 'none') {
+    lay.style.display = 'block';
+  } else {
+    lay.style.display = 'none';
+  }
+}
+function webSearchBtnFunction() {
+  xSlider('.webSearch .searchBtn ', '.inputBox');
+  let el = document.querySelector('.webSearch .searchBtn');
+
+  // el.addEventListener('click', function () {
+  //   let windowWidth = window.innerWidth;
+  //   if (windowWidth <= 767) {
+  //     let lay = document.querySelector('.menuOverlay');
+  //     let style = window.getComputedStyle(lay);
+  //     // let inputBox = document.querySelector('.inputBox');
+  //     // let inputBoxStyle = window.getComputedStyle(inputBox);
+  //     if (style.display == 'none') {
+  //       lay.style.display = 'block';
+  //     } else {
+  //       lay.style.display = 'none';
+  //     }
+  //   }
+  // });
+}
+webSearchBtnFunction();
 
 // -----------------------------------------------------------------------
 // -----  form表單 單個檔案上傳+多個檔案上傳   --------------------------------
