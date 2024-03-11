@@ -780,6 +780,11 @@ function mainMenuSetup() {
     sidebarCtrlBtn.addEventListener('click', (e) => {
       showSidebar();
       e.preventDefault();
+      let content = document.querySelector('.webSearch .inputBox');
+      let el = window.getComputedStyle(content);
+      if (el.display == 'block') {
+        content.style.display = 'none';
+      }
     });
 
     function showSidebar() {
@@ -817,6 +822,15 @@ function mainMenuSetup() {
         i.classList.remove('active');
       });
     }
+    menuOverlay.addEventListener('click', function () {
+      let side = document.querySelector('.mobileSidebar');
+      let el = window.getComputedStyle(side);
+      if (el.transform == 'matrix(1, 0, 0, 1, 0, 0)') {
+        hideSidebar();
+      }
+      //console.log();
+      //       window.getComputedStyle(side)
+    });
   }
 
   function toggleAccordion(item, con) {
@@ -1499,34 +1513,24 @@ shareBtnFunction();
 // -----------------------------------------------------------------------
 // -----  分享按鈕 webSearchBtn dropdwon   ---------------------------------------
 // -----------------------------------------------------------------------
-function clickOverlay() {
-  let lay = document.querySelector('.menuOverlay');
-  let style = window.getComputedStyle(lay);
 
-  if (style.display == 'none') {
-    lay.style.display = 'block';
-  } else {
-    lay.style.display = 'none';
-  }
-}
 function webSearchBtnFunction() {
-  xSlider('.webSearch .searchBtn ', '.inputBox');
   let el = document.querySelector('.webSearch .searchBtn');
-
-  // el.addEventListener('click', function () {
-  //   let windowWidth = window.innerWidth;
-  //   if (windowWidth <= 767) {
-  //     let lay = document.querySelector('.menuOverlay');
-  //     let style = window.getComputedStyle(lay);
-  //     // let inputBox = document.querySelector('.inputBox');
-  //     // let inputBoxStyle = window.getComputedStyle(inputBox);
-  //     if (style.display == 'none') {
-  //       lay.style.display = 'block';
-  //     } else {
-  //       lay.style.display = 'none';
-  //     }
-  //   }
-  // });
+  let content = document.querySelector('.webSearch .inputBox');
+  let menuOverlay = document.querySelector('.menuOverlay');
+  let windowWidth;
+  el.addEventListener('click', function () {
+    windowWidth = window.innerWidth;
+    jsSlideToggle(content);
+    if (windowWidth <= 767) {
+      jsFadeToggle(menuOverlay);
+      menuOverlay.addEventListener('click', (e) => {
+        jsSlideUp(content);
+        jsFadeToggle(menuOverlay);
+        menuOverlay.style.removeProperty('z-index');
+      });
+    }
+  });
 }
 webSearchBtnFunction();
 
