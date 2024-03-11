@@ -828,8 +828,6 @@ function mainMenuSetup() {
       if (el.transform == 'matrix(1, 0, 0, 1, 0, 0)') {
         hideSidebar();
       }
-      //console.log();
-      //       window.getComputedStyle(side)
     });
   }
 
