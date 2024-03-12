@@ -1511,6 +1511,16 @@ shareBtnFunction();
 // -----------------------------------------------------------------------
 // -----  分享按鈕 webSearchBtn dropdwon   ---------------------------------------
 // -----------------------------------------------------------------------
+function searchClickSlideUp() {
+  const content = document.querySelector('.webSearch .inputBox');
+  let el = document.querySelector('.webSearch .searchBtn');
+  window.addEventListener('click', function (e) {
+    // 檢查點擊事件是否發生在 content 元素內
+    if (!content.contains(e.target) && e.target !== el) {
+      jsSlideUp(content);
+    }
+  });
+}
 
 function webSearchBtnFunction() {
   let el = document.querySelector('.webSearch .searchBtn');
@@ -1527,6 +1537,8 @@ function webSearchBtnFunction() {
         jsFadeToggle(menuOverlay);
         menuOverlay.style.removeProperty('z-index');
       });
+    } else {
+      searchClickSlideUp();
     }
   });
 }
