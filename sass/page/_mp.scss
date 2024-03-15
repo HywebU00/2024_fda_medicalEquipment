@@ -565,16 +565,15 @@ section {
         font-size: 1.15em;
       }
     }
-
-    min-height: rem(968);
     position: relative;
     &::after {
       position: absolute;
       content: '';
       background-image: url(../images/customize/banner_bg.png);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       height: 100%;
+      min-height: rem(832);
       width: 100%;
       top: 0;
     }
@@ -585,15 +584,16 @@ section {
     }
     @include screen('tablet') {
       &::after {
-        background-position: center 75vh;
+        background-size: auto;
+        // background-position: center 75vh;
       }
     }
     @include screen('xsMobile') {
-      background-position: center 82vh;
+      // background-position: center 82vh;
     }
     @include screen('xsMobile') {
       &::after {
-        background-position: center 100vh;
+        // background-position: center 100vh;
       }
     }
     .iconList {
@@ -854,7 +854,10 @@ section {
     }
   }
   .cardPosition {
-    margin-top: rem(50);
+    margin-top: -2rem;
+    @include screen('xsMobile') {
+      margin-top: 0;
+    }
   }
   .cardList {
     > .item {
@@ -886,7 +889,7 @@ section {
         margin-top: 0.25rem;
       }
       span {
-        font-size: 1rem;
+        font-size: rem(18);
         color: #1a1a1a;
       }
       @include screen('tablet') {
@@ -983,7 +986,7 @@ section {
         font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
         padding-bottom: rem(40);
         span {
-          font-size: 1rem;
+          font-size: 1.125rem;
           color: $colorSubText;
           margin-top: 0.25rem;
           padding-left: 0.5rem;
@@ -1003,6 +1006,7 @@ section {
         border-radius: 35px;
         padding: 1.5rem;
         text-align: center;
+        font-size: 1.125rem;
         a {
           color: #fff;
         }
@@ -1040,10 +1044,13 @@ section {
         color: $colorSubText;
         padding-left: 2rem;
         position: relative;
-        padding: 1.5rem 1.5rem 1.5rem 3rem;
+        padding: 0 1.5rem 0rem 3rem;
         font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
         font-weight: 500;
         font-size: 1.125em; //rem(18);
+        height: 74px;
+        display: flex;
+        align-items: center;
         &::after {
           content: 'Q';
           font-family: 'Roboto', Helvetica, sans-serif;
@@ -1096,6 +1103,9 @@ section {
     width: rem(110);
     bottom: rem(48);
     right: 5px;
+  }
+  @include screen('mobile') {
+    display: none;
   }
 }
 .largeSize .mp .banner {

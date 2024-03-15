@@ -373,17 +373,70 @@ h2.title {
   label {
     font-weight: 600;
   }
+
+  .btnGrp {
+    margin: 0 auto;
+  }
+  @include screen('tablet') {
+    .btnGrp {
+      width: 100%;
+      display: block;
+    }
+  }
   @include screen('mobile') {
     .flexForm {
       display: block;
       width: 100%;
       .formGrp {
         select,
+        label,
         input {
           width: 100%;
         }
       }
     }
+  }
+
+  .dateGrp {
+    display: flex;
+    input {
+      width: calc(100% - 1em);
+    }
+    .datePick + .datePick {
+      padding-left: 1.5rem;
+      position: relative;
+      &:before {
+        content: '~';
+        font-size: 1.5em;
+        color: #777;
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        @include screen('mobile') {
+          left: 10px;
+        }
+      }
+    }
+    @include screen('mobile') {
+      width: 100%;
+      display: block;
+      .datePick {
+        width: 100%;
+        &:before {
+          display: none;
+        }
+      }
+      .datePick + .datePick {
+        padding-left: 0rem;
+      }
+
+      // width: calc(100% - 0.6em);
+    }
+  }
+  .btnReset {
+    background: #474747;
+    color: #fff;
+    border-radius: 0.25rem;
   }
 }
 .infoSection {

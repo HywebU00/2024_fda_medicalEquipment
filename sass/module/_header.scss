@@ -126,17 +126,20 @@
 
     @include screen('mobile') {
       float: none;
+      margin-top: 0;
     }
 
-    a {
-      display: inline-block;
+    .logo {
+      // display: inline-block;
+      display: flex;
+      justify-content: flex-start;
     }
 
     img {
       display: block;
       max-height: 75px;
       @media screen and (max-width: 1280px) {
-        max-width: 520px !important;
+        max-width: 300px !important;
       }
       @include screen('mobile') {
         max-width: 100% !important;
@@ -148,15 +151,18 @@
       width: 100%;
       text-align: center;
       height: 60px;
-
-      img {
-        width: auto;
-        height: auto;
-        max-height: 54px;
-        margin: 0px auto;
-        transform: scale(0.8);
-        padding: 0 0.5rem;
+      .logo {
+        width: 360px;
+        justify-content: center;
       }
+      // img {
+      //   width: auto;
+      //   height: auto;
+      //   max-height: 54px;
+      //   margin: 0px auto;
+      //   transform: scale(0.8);
+      //   padding: 0 0.5rem;
+      // }
     }
   }
   &:after {
@@ -256,11 +262,17 @@
       display: contents;
       a {
         padding-top: 1rem;
+        justify-content: center;
       }
     }
     @include screen('mobile') {
       position: relative;
       top: auto;
+      display: flex;
+      justify-content: center;
+      a {
+        padding-top: 1.25rem;
+      }
     }
   }
 
