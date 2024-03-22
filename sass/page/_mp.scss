@@ -112,6 +112,39 @@ section {
       top: calc(50% - 24px);
     }
   }
+  .itemTitle {
+    font-size: rem(30);
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
+    span {
+      font-size: rem(18);
+      color: #1a1a1a;
+    }
+    @include screen('tablet') {
+      font-size: rem(22);
+      .more {
+        margin-right: 1rem;
+      }
+    }
+    @include screen('mobile') {
+      font-size: 1rem;
+      justify-content: flex-start;
+      span {
+        display: block;
+      }
+    }
+    .more {
+      color: #fff;
+      line-height: 90px;
+      &:hover {
+        color: mix(#000000, #fff, 10%);
+      }
+    }
+  }
 }
 
 .listTypeA {
@@ -977,29 +1010,32 @@ section {
       > div {
         padding-top: 40px;
       }
-
+      .more {
+        color: $colorSubText;
+        line-height: unset;
+      }
+      .itemTitle {
+        align-items: center;
+        margin-bottom: rem(30);
+      }
       .title {
         font-size: rem(30);
         color: $colorSecondary;
         font-weight: bold;
         display: flex;
         font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
-        padding-bottom: rem(40);
         span {
           font-size: 1.125rem;
           color: $colorSubText;
           margin-top: 0.25rem;
           padding-left: 0.5rem;
         }
-        // @include screen('tablet') {
-        //   font-size: rem(22);
-        // }
       }
       .swiperBox {
         // padding-top: 15px;
       }
       .swiperArrow {
-        top: 57%;
+        top: 63%;
       }
       .swiper-slide {
         background: $colorSecondary;
@@ -1023,6 +1059,9 @@ section {
     min-height: rem(450);
     display: flex;
     align-items: center;
+    .container {
+      padding: 15px;
+    }
     .listBox {
       margin-bottom: 0;
       a {
@@ -1081,6 +1120,43 @@ section {
       @include screen('mobile') {
         flex-basis: calc(100% / 1 - 10px);
         max-width: calc(100% / 1 - 10px);
+      }
+    }
+    .title {
+      font-size: rem(30);
+      color: $colorPrimary;
+      font-weight: bold;
+      display: flex;
+      font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
+      padding-bottom: rem(30);
+      padding-top: rem(40);
+      span {
+        font-size: 1.125rem;
+        color: #fff; //$colorSubText;
+        margin-top: 0.25rem;
+        padding-left: 0.5rem;
+      }
+      @include screen('tablet') {
+        padding-top: rem(0);
+        padding-bottom: rem(0);
+      }
+    }
+    @include screen('tablet') {
+      .more {
+        line-height: 1rem;
+        &::after {
+          background-color: $colorPrimary;
+        }
+        &:hover {
+          transition: all 0.5s;
+
+          &::after {
+            background-color: mix(#000000, $colorPrimary, 20%);
+          }
+        }
+      }
+      .itemTitle {
+        margin: 1.5rem 0;
       }
     }
   }
