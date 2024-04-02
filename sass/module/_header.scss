@@ -287,7 +287,6 @@
 //沒有選單的時候
 .nomenu {
   .header {
-    position: sticky;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     &::after {
       display: none;

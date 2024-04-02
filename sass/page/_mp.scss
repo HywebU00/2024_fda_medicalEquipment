@@ -555,7 +555,7 @@ section {
       }
     }
     h2 {
-      font-size: 3.125em; //rem(50);
+      font-size: 2.8em; //rem(50);
       font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
       font-weight: 700;
       // text-wrap: nowrap;
@@ -574,15 +574,15 @@ section {
         }
       }
       @media screen and (max-width: 1100px) {
-        font-size: 2.8em;
+        font-size: 2.5em;
       }
       @include screen('mobile') {
-        font-size: 2.5em;
+        font-size: 2.3em;
       }
     }
     .titleText {
       font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
-      font-size: 1.5em; //rem(24);
+      font-size: 1.35em; //rem(24);
       font-weight: 500;
       line-height: rem(36);
       color: $colorSubText;
@@ -595,7 +595,7 @@ section {
         padding: 0;
       }
       @include screen('mobile') {
-        font-size: 1.15em;
+        font-size: 1.05em;
       }
     }
     position: relative;
