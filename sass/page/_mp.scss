@@ -586,7 +586,7 @@ section {
       font-weight: 500;
       line-height: rem(36);
       color: $colorSubText;
-
+      text-align: justify;
       .block {
         display: block;
         margin-bottom: 2rem;
@@ -670,7 +670,7 @@ section {
           transition: all 0.3s ease;
           font-family: 'Noto Sans TC', 'Roboto', Helvetica, sans-serif;
           font-weight: 500;
-          font-size: 1.875em; //rem(30);
+          font-size: 1.475em; //rem(30);
           box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.15);
           display: flex;
           flex-direction: column;
